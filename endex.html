@@ -1,0 +1,99 @@
+07.07 12:15 PM
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rehan Website</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    text-align:center;
+    transition:0.5s;
+}
+.container{
+    margin-top:80px;
+}
+h1{
+    font-size:45px;
+}
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin:10px;
+}
+.light{
+    background:white;
+    color:black;
+}
+.card{
+    background:rgba(255,255,255,0.2);
+    width:350px;
+    margin:auto;
+    padding:20px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Welcome Rehan </h1>
+
+<h2 id="time"></h2>
+
+<p id="message">Have a Great Day!</p>
+
+<h3>Button Clicks : <span id="count">0</span></h3>
+
+<button onclick="clickMe()">Click Me</button>
+
+<button onclick="changeTheme()"> Theme</button>
+
+</div>
+
+</div>
+
+<script>
+
+function updateTime(){
+let now=new Date();
+document.getElementById("time").innerHTML=now.toLocaleTimeString();
+}
+setInterval(updateTime,1000);
+updateTime();
+
+let c=0;
+function clickMe(){
+c++;
+document.getElementById("count").innerHTML=c;
+
+if(c==5){
+document.getElementById("message").innerHTML=" Awesome!";
+}
+
+if(c==10){
+document.getElementById("message").innerHTML=" You clicked 10 times!";
+}
+}
+
+function changeTheme(){
+document.body.classList.toggle("light");
+}
+
+</script>
+
+</body>
+</html>
